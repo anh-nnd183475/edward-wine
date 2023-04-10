@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+
+    <link rel="stylesheet" href="./css/productCarousel.css">
+    <link rel="stylesheet" href="./css/menubar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/productSpecifies.css">
+    <link rel="stylesheet" href="./css/productDetails.css">
+    <link rel="stylesheet" href="./css/ratingSumary.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("./components/menubar.html");
+            $("#footer").load("./components/footer.html");
+            $('#banner').load("./components/banner.html");
+            $('#rating-sumary').load("./components/ratingSumary.html");
+            for (let i = 1; i <= 4; i++) {
+                $(`#product-card${i}`).load("./components/productCard.html");
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="banner"></div>
+    <div class="detail-body">
+        <a href="./allProducts.html" class="breadcum">
+            <i class="fa-solid fa-chevron-left back-icon"></i>
+            <span>Back to Products</span>
+        </a>
+        <div class="product-name">
+            <h2 class="wine_name">Barossa QuocLui</h2>
+            <div class="product-subtitle">
+                <div class="product-rated">
+                    <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                    <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                    <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                    <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                    <i class="fa-solid fa-star-half-stroke" style="color: #daa520;"></i>
+                    <span class="rate-count">(200 Reviews)</span>
+                </div>
+                <div class="wine-origin">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span>Barossa Valley, Australia</span>
+                </div>
+            </div>
+            <div class="action-like">
+                <i class="fa-regular fa-heart" style="color: #5b0d27;"></i>
+                <span class="isNotLiked">Add to favourite</span>
+                <!--<span class="isLiked">Remove favourite</span> -->
+            </div>
+        </div>
+        <div class="product_action">
+            <div class="info-product_image">
+                <img src="https://img3.zakaz.ua/src.1617796864.ad72436478c_2021-04-08_Tamara/src.1617796864.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"
+                    alt="Product image" class="info-wine_image">
+            </div>
+            <div class="user-action">
+                <div class="action-buy">
+                    <div class="buy-choice_active" id="buyEach" onclick="changeOption('each')">
+                        <div class="buy-label_active" id="eachLabel">
+                            <i class="fa-solid fa-bottle-droplet"></i>
+                            <span>Each</span>
+                        </div>
+                        <div class="product-price_box">
+                            <div class="normal-price">
+                                <span class="price_normal">Normal: $40.5</span>
+                            </div>
+                            <div class="price_member">
+                                <span>Online Member: </span>
+                                <span class="price_off">$40.5</span>
+                                <span class="price_sale">$39.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy-choice" id="buyCombo" onclick="changeOption('combo')">
+                        <div class="buy-label" id="comboLabel">
+                            <i class="fa-solid fa-box"></i>
+                            <span>Case (6)</span>
+                        </div>
+                        <div class="product-price_box">
+                            <div class="price_combo">
+                                <span class="price_off">$243</span>
+                                <span class="price_sale">$239.5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choose-quantity">
+                        <label for="inputQuantity" class="buy_label">Quantity:</label>
+                        <div class="quantity-input">
+                            <button id="minusButton" class="button-minus" onclick="minusButtonOnclick()">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+                            <input type="number" name="inputQuantity" id="inputQuantity" min="1" max="90" value="1">
+                            <button id="plusButton" class="button-minus" onclick="plusButtonOnclick()">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button id="buttonaddToCard">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+        <hr class="before-info_break" style="height: 3px;">
+        <div class="product-infor">
+            <div class="about-product">
+                <div class="about-info">
+                    <h2>About this product</h2>
+                    <span>
+                        Traditional winemaking techniques and an eye to modern styles allow us to create wines that
+                        are synonymous with the regions they are from. Rich, honest wines that showcase the regions
+                        in their most natural light. Rich red in colour with purple hues, this wine displays aromas
+                        of blackberries and plums with hints of pepper and spice. The palate is rich, round and soft
+                        with concentrated berry fruits and soft velvety tannins. This wine can be enjoyed now but
+                        will also improve with careful cellaring.
+                    </span>
+                </div>
+            </div>
+            <div class="product-specifies">
+                <h2 class="specifies-head">Product Specifications</h2>
+                <table>
+                    <tr>
+                        <td class="specify-head">
+                            Type
+                        </td>
+                        <td class="specify-info">
+                            Shizar
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Size
+                        </td>
+                        <td class="specify-info">
+                            1200ML
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Region
+                        </td>
+                        <td class="specify-info">
+                            Barossa Valley
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Current Vintage
+                        </td>
+                        <td class="specify-info">
+                            Multiples (Bundles)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Alcohol Volume
+                        </td>
+                        <td class="specify-info">
+                            8.6
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Country
+                        </td>
+                        <td class="specify-info">
+                            Australia
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            State
+                        </td>
+                        <td class="specify-info">
+                            South Australia
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Brand name
+                        </td>
+                        <td class="specify-info">
+                            Edward
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Food match
+                        </td>
+                        <td class="specify-info">
+                            Cured Meat
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Wine Sweetness
+                        </td>
+                        <td class="specify-info">
+                            Full Bodies
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Wine Body
+                        </td>
+                        <td class="specify-info">
+                            Full Bodies
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="specify-head">
+                            Organic
+                        </td>
+                        <td class="specify-info">
+                            True
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="rating-and-review">
+            <h3 class="review_label">Ratings and Reviews</h3>
+            <h4 class="ratings_label">Customers Rating</h4>
+            <div id="rating-sumary"></div>
+        </div>
+        <div class="recommend">
+            <h3 class="recommend-label">Recommended for you</h3>
+            <h4 class="recommend-subLabel">Might be interested in</h4>
+            <div class="product-carousel">
+                <div class="row">
+                    <div class="splide">
+                        <div class="splide__track" style="overflow-y:visible ;">
+                            <div class="splide__list" style="overflow-y:visible ;">
+                                <div class="col-3 splide__slide m-3">
+                                    <div class="product-card">
+                                        <div class="card-name">
+                                            <h3 class="wine-name">Rượu vang Ý</h3>
+                                            <h4 class="wine-subname">Tenuta Perano Chianti Classico 2017</h4>
+                                        </div>
+                                        <div class="product-image">
+                                            <img src="https://winecellar.vn/wp-content/uploads/2020/05/tenuta-perano-chianti-classico-300x400.jpg"
+                                                alt="Product image" class="wine-image">
+                                        </div>
+                                        <div class="ratings">
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                        </div>
+                                        <span class="product-rating-count">(24 Reviews)</span>
+                                        <div class="price-tag">
+                                            <span class="price">$44.50</span>
+                                            <span class="price_unit">each</span>
+                                        </div>
+                                        <div class="product-volume">
+                                            <span>Bottle Vol 1850ML</span>
+                                        </div>
+                                        <button class="button_see-more" onclick="{
+                                    location.href = '../productDetail.html';
+                                };">
+                                            SEE MORE <i class="fa-solid fa-chevron-right"
+                                                style="margin-left:15px ;"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-3 splide__slide m-3">
+                                    <div class="product-card">
+                                        <div class="card-name">
+                                            <h3 class="wine-name">Rượu vang Ý</h3>
+                                            <h4 class="wine-subname">Luce La Vite Lucente 2017</h4>
+                                        </div>
+                                        <div class="product-image">
+                                            <img src="https://winecellar.vn/wp-content/uploads/2019/05/la-vite-lucente-300x400.jpg"
+                                                alt="Product image" class="wine-image">
+                                        </div>
+                                        <div class="ratings">
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                        </div>
+                                        <span class="product-rating-count">(24 Reviews)</span>
+                                        <div class="price-tag">
+                                            <span class="price">$44.50</span>
+                                            <span class="price_unit">each</span>
+                                        </div>
+                                        <div class="product-volume">
+                                            <span>Bottle Vol 850ML</span>
+                                        </div>
+                                        <button class="button_see-more" onclick="{
+                                location.href = '../productDetail.html';
+                            };">
+                                            SEE MORE <i class="fa-solid fa-chevron-right"
+                                                style="margin-left:15px ;"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-3 splide__slide m-3">
+                                    <div class="product-card">
+                                        <div class="card-name">
+                                            <h3 class="wine-name">Rượu Vang Sủi</h3>
+                                            <h4 class="wine-subname">Gemma Di Luna Prosecco Extra Dry</h4>
+                                        </div>
+                                        <div class="product-image">
+                                            <img src="https://winecellar.vn/wp-content/uploads/2021/03/gemma-di-luna-prosecco-extra-dry-1-300x400.jpg"
+                                                alt="Product image" class="wine-image">
+                                        </div>
+                                        <div class="ratings">
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                        </div>
+                                        <span class="product-rating-count">(24 Reviews)</span>
+                                        <div class="price-tag">
+                                            <span class="price">$44.50</span>
+                                            <span class="price_unit">each</span>
+                                        </div>
+                                        <div class="product-volume">
+                                            <span>Bottle Vol 850ML</span>
+                                        </div>
+                                        <button class="button_see-more" onclick="{
+                                location.href = '../productDetail.html';
+                            };">
+                                            SEE MORE <i class="fa-solid fa-chevron-right"
+                                                style="margin-left:15px ;"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-3 splide__slide m-3">
+                                    <div class="product-card">
+                                        <div class="card-name">
+                                            <h3 class="wine-name">Rượu Vang Ý</h3>
+                                            <h4 class="wine-subname">Negroamaro 2019</h4>
+                                        </div>
+                                        <div class="product-image">
+                                            <img src="https://winecellar.vn/wp-content/uploads/2016/05/f-negroamaro-300x400.jpg"
+                                                alt="Product image" class="wine-image">
+                                        </div>
+                                        <div class="ratings">
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                            <i class="fa-solid fa-star" style="color: #daa520;"></i>
+                                        </div>
+                                        <span class="product-rating-count">(24 Reviews)</span>
+                                        <div class="price-tag">
+                                            <span class="price">$44.50</span>
+                                            <span class="price_unit">each</span>
+                                        </div>
+                                        <div class="product-volume">
+                                            <span>Bottle Vol 850ML</span>
+                                        </div>
+                                        <button class="button_see-more" onclick="{
+                                location.href = '../productDetail.html';
+                            };">
+                                            SEE MORE <i class="fa-solid fa-chevron-right"
+                                                style="margin-left:15px ;"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="https://kit.fontawesome.com/0e9368495a.js" crossorigin="anonymous"></script>
+    <script src="./src/main.js"></script>
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'loop',
+            perPage: 4,
+            gap: '2.5rem',
+            rewind: true,
+            perMove: 2,
+            breakpoints: {
+                900: {
+                    perPage: 2,
+                    gap: '4rem',
+                    height: 'fit-content',
+                },
+                480: {
+                    perPage: 1,
+                    gap: '2rem',
+                    height: 'fit-content',
+                    perMove: 1,
+                },
+            },
+        });
+        splide.mount();
+    </script>
+</body>
+
+
+
+</html>

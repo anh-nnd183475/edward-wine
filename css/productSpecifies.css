@@ -1,0 +1,42 @@
+.product-specifies {
+    width: 30vw;
+    margin-left: 5vw;
+}
+
+.product-specifies table {
+    width: 100%;
+    padding: 5px;
+}
+
+.specifies-head {
+    color: #490000;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 20px 0px;
+}
+
+.specify-head {
+    border: solid 1px lightgrey;
+    padding: 5px 10px;
+    font-weight: 500;
+}
+
+.specify-info {
+    border: solid 1px lightgrey;
+    padding: 5px 10px;
+}
+
+
+@media only screen and (max-width: 901px) and (min-width: 481px) {
+    .product-specifies {
+        width: 43vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product-specifies {
+        width: 80vw;
+        margin-left: 0;
+    }
+
+}

@@ -1,0 +1,45 @@
+.banner {
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+}
+
+.banner_img {
+    width: 100vw;
+    object-fit: cover;
+    overflow: hidden;
+    height: 80vh;
+}
+
+.over-banner {
+    position: absolute;
+    z-index: 9;
+    height: 80vh;
+    width: 100vw;
+    display: block;
+    background-color: #5b0d27;
+    opacity: 0.4;
+    top: 70px;
+}
+
+@media only screen and (max-width: 901px) and (min-width: 481px) {
+    .banner_img {
+        height: 50vh;
+    }
+
+    .over-banner {
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .banner_img {
+        height: 40vh;
+    }
+
+    .over-banner {
+        height: 40vh;
+    }
+}

@@ -1,0 +1,36 @@
+.filter-label {
+    width: 15vw;
+    text-align: left;
+    padding: 5px 0px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.filter-field {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-field_label {
+    margin: 3px 0px;
+}
+
+.accordion-button {
+    font-weight: 500;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.accordion-header {
+    border: solid 1px lightgrey;
+}
+
+@media only screen and (max-width: 901px) and (min-width: 481px) {
+    .filter-label {
+        width: 300px;
+    }
+}

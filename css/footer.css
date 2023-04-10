@@ -1,0 +1,134 @@
+footer {
+    background-color: #8B0000;
+    color: #fff;
+    padding: 30px 0;
+    width: 100%;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+footer .contact-info .address,
+footer .contact-info .phone,
+footer .contact-info .email {
+    padding-bottom: 6px;
+}
+
+footer .get-in-touch,
+footer .follow-us,
+footer .newsletter {
+    flex-basis: calc(100% / 3 - 20px);
+    margin-bottom: 20px;
+    border: 1px solid white;
+    padding: 30px;
+}
+
+
+footer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+footer .contact-info {
+    margin-top: 10px;
+}
+
+footer .social-icons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #5b0d27;
+    transition: all 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+footer .subscribe-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+footer .subscribe-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+footer .subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #fff;
+    color: #8B0000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+footer .subscribe-form button:hover {
+    background-color: #8B0000;
+    color: #fff;
+}
+
+@media (max-width: 1420px) {
+    footer h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    footer .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #5b0d27;
+        transition: all 0.3s ease;
+    }
+
+}
+
+@media (max-width: 844px) {
+
+    footer .get-in-touch,
+    footer .follow-us,
+    footer .newsletter {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+        border: 1px solid white;
+        padding: 30px;
+    }
+
+    .get-in-touch h3,
+    .follow-us h3,
+    .newsletter h3 {
+        text-align: center;
+    }
+
+    .get-in-touch,
+    .follow-us,
+    .newsletter {
+        width: 100%;
+        margin: auto;
+    }
+}

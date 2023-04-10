@@ -1,0 +1,81 @@
+.our-services {
+    padding: 50px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.section-title {
+    font-family: "Segoe Script", cursive;
+    font-size: 56px;
+    margin-bottom: 50px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.service-image {
+    width: 40%;
+}
+
+.service-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.service-info {
+    width: 55%;
+}
+
+.service-info h3 {
+    font-size: 25px;
+    color: brown;
+}
+
+.service-info p {
+    font-size: 17px;
+}
+
+.service-info .p-right {
+    text-align: right;
+}
+
+.service-info .p-left {
+    text-align: left;
+}
+
+@media (max-width: 820px) {
+    .our-services {
+        max-width: 80%;
+        padding: 0;
+    }
+
+    .service-item {
+        flex-direction: column;
+    }
+
+    .service-info {
+        width: 100%;
+    }
+
+    .service-info p {
+        font-size: 19px;
+    }
+
+    .service-image {
+        width: 100%;
+        margin: auto;
+    }
+
+    .service-info .p-left,
+    .service-info .p-right {
+        width: 100%;
+        text-align: left;
+        padding: 0px;
+    }
+}

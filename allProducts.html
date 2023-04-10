@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/allProducts.css">
+    <link rel="stylesheet" href="./css/menubar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/productFilter.css">
+    <link rel="stylesheet" href="./css/productCard.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <script>
+        $(function () {
+            $("#header").load("./components/menubar.html");
+            $("#footer").load("./components/footer.html");
+            $("#banner").load("./components/banner.html");
+            $("#product-filter").load("./components/productFilter.html");
+            for (let i = 1; i <= 12; i++) {
+                $(`#product-card${i}`).load("./components/productCard.html");
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="banner"></div>
+    <div class="all-products_body">
+        <div class="products-list">
+            <div id="filter_mobile">
+                <div class="accept-filter">
+                    <h4 class="filter-label_mobile">Choose filter</h4>
+                    <div class="close-filter_mobile">
+                        <i class="fa-solid fa-times" onclick="buttonFilterOnclick()"></i>
+                    </div>
+                </div>
+                <div id="product-filter"></div>
+                <button id="acceptFilterButton" onclick="buttonFilterOnclick()">OK</button>
+            </div>
+            <div class="right-col">
+                <div class="filter-box">
+                    <div class="filter-button">
+                        <button id="buttonFilter" onclick="buttonFilterOnclick()">
+                            <i class="fa-solid fa-sliders"></i>
+                            Filter
+                        </button>
+                    </div>
+                    <div class="sort-by-field">
+                        <label for="sortBySelect">
+                            Sort by
+                        </label>
+                        <select name="sortBySelect" id="sortBySelect">
+                            <option value="best match">Best match</option>
+                            <option value="hight price">Hight price</option>
+                            <option value="low price">Low price</option>
+                            <option value="latest">Latest</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="list-item-field">
+                    <div id="product-card1"></div>
+                    <div id="product-card2"></div>
+                    <div id="product-card3"></div>
+                    <div id="product-card4"></div>
+                    <div id="product-card5"></div>
+                    <div id="product-card6"></div>
+                    <div id="product-card7"></div>
+                    <div id="product-card8"></div>
+                    <div id="product-card9"></div>
+                    <div id="product-card10"></div>
+                    <div id="product-card11"></div>
+                    <div id="product-card12"></div>
+                </div>
+                <div class="pagination-box">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0e9368495a.js" crossorigin="anonymous"></script>
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
